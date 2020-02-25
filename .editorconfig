@@ -1,12 +1,33 @@
 # http://editorconfig.org
 
-# top-most EditorConfig file
 root = true
 
 [*]
-end_of_line = lf
 charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = 80
 
-[*.js]
+[*.{js,json}]
+indent_size = 2
+indent_style = space
+
+[*.json]
+insert_final_newline = ignore
+
+[*.html]
+indent_size = 2
+
+# 4 space indentation as per https://www.python.org/dev/peps/pep-0008/#indentation
+[*.py]
+indent_size = 4
+indent_style = space
+max_line_length = 80
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.css]
 indent_style = space
 indent_size = 2
