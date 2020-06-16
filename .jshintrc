@@ -9,5 +9,6 @@
   "indent": 2,
   "undef": true,
   "unused": true,
-  "bitwise": true
+  "bitwise": true,
+  "esversion":6
 }
