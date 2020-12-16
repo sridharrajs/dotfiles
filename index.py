@@ -7,9 +7,13 @@ import pathlib
 HOME = str(pathlib.Path.home())
 
 ignore_list = [
-  'index.py', # script for copying the . files
-  '.zshrc', # currently unsupported as it will overwrite the existing APPARIX configuration.
-  '.git', # as it is a directory
+    # Git specific meta
+    '.git',
+    'LICENSE',
+    'README.md',
+
+    'index.py', # script for copying the . files
+    '.zshrc', # currently unsupported as it will overwrite the existing APPARIX configuration.
 ]
 
 for dot_file in os.listdir('.'):
