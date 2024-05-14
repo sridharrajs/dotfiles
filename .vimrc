@@ -28,3 +28,12 @@ set ttimeout
 set ttimeoutlen=1
 set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 set ttyfast
+
+
+" disable arrow keys in normal mode
+for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+  exec 'noremap' key '<Nop>'
+  exec 'cnoremap' key '<Nop>'
+endfor
+
+set clipboard=unnamed "yank to clipboard
