@@ -47,6 +47,8 @@ call plug#begin()
   Plug 'doums/darcula'
   Plug 'editorconfig/editorconfig-vim' "EditorConfigReload to reload configs
   Plug 'preservim/nerdtree'
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 colorscheme darcula "enable darcula theme
@@ -104,3 +106,18 @@ set statusline+=\ row:\ %l\ col:\ %c\ percent:\ %p%%
 set laststatus=2
 
 nnoremap <F3> :NERDTreeToggle<cr>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" git gutter configs
+set signcolumn=yes
+" let g:gitgutter_highlight_lines = 1
+" let g:gitgutter_highlight_linenrs = 1
+let g:gitgutter_async = 0 " run diffs synchronously
+
+" Your vimrc
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
