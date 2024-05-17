@@ -1,5 +1,6 @@
 set nocompatible " disable compactability with vim
 set nobackup " Do not save backup files.
+set noswapfile " disable swap file creation
 set history=1000 " Set the commands to save in history default number is 20.
 
 " enable line numbers
@@ -75,12 +76,11 @@ set clipboard=unnamed
 " Press the space bar to type the : character in command mode.
 nnoremap <space> :
 
-
 " Pressing the letter o will open a new line below the current one.
 " Exit insert mode after creating a new line above or below the current line.
 nnoremap o o<esc>
 nnoremap O O<esc>
-
+nnoremap qw li<cr><esc> " break the rest of the sentence to the next line
 " You can split the window in Vim by typing :split or :vsplit.
 " Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l.
 nnoremap <c-j> <c-w>j
@@ -106,7 +106,7 @@ set statusline+=\ row:\ %l\ col:\ %c\ percent:\ %p%%
 set laststatus=2
 
 nnoremap <F3> :NERDTreeToggle<cr>
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<space><space>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " git gutter configs
