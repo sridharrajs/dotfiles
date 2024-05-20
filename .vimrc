@@ -19,6 +19,7 @@ set tabstop=2 " Set tab width to 2 columns.
 set expandtab " Use space characters instead of tabs.
 
 set scrolloff=10 " Do not let cursor scroll below or above N number of lines when scrolling.
+set title
 
 set nowrap " While searching though a file incrementally highlight matching characters as you type.
 set ignorecase " Ignore capital letters during search.
@@ -26,6 +27,7 @@ set smartcase " Override the ignorecase option if searching for capital letters.
 set showmatch " Show matching words during a search.
 set hlsearch " Use highlighting when doing a search.
 set incsearch " search as you type
+set wrapscan " searches wrap around the end of the file
 
 set showcmd " Show partial command you type in the last line of the screen.
 set showmode " Show the mode you are on the last line.
