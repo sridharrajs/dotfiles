@@ -123,3 +123,7 @@ function! GitStatus()
   return printf('+%d ~%d -%d', a, m, r)
 endfunction
 set statusline+=%{GitStatus()}
+
+" moving lines up/down
+nnoremap <S-k> :m -2<CR>
+nnoremap <S-j> :m +1<CR>
