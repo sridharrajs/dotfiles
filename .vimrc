@@ -47,6 +47,7 @@ set cursorline " show cursor line
 set encoding=UTF-8
 
 call plug#begin()
+  Plug 'inkarkat/vim-LineJuggler'
   Plug 'doums/darcula'
   Plug 'editorconfig/editorconfig-vim' "EditorConfigReload to reload configs
   Plug 'preservim/nerdtree'
@@ -55,6 +56,7 @@ call plug#begin()
 call plug#end()
 
 colorscheme darcula "enable darcula theme
+
 
 " change block cursor when in insert mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -83,12 +85,17 @@ nnoremap <space> :
 nnoremap o o<esc>
 nnoremap O O<esc>
 nnoremap qw li<cr><esc> " break the rest of the sentence to the next line
+
+nnoremap <cr> o<esc> "insert newlines when enter pressed in normal mode
+
 " You can split the window in Vim by typing :split or :vsplit.
 " Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l.
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+nnoremap <m-x> <c-w>v
 
 
 " status lines
@@ -107,7 +114,9 @@ set statusline+=\ row:\ %l\ col:\ %c\ percent:\ %p%%
 " Show the status on the second to last line.
 set laststatus=2
 
-nnoremap <F3> :NERDTreeToggle<cr>
+" nnoremap <F3> :NERDTreeToggle<cr>
+nnoremap <C-o> :NERDTreeToggle %<CR>
+
 let g:ctrlp_map = '<space><space>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -124,6 +133,6 @@ function! GitStatus()
 endfunction
 set statusline+=%{GitStatus()}
 
-" moving lines up/down
+
 nnoremap <S-k> :m -2<CR>
 nnoremap <S-j> :m +1<CR>
