@@ -47,7 +47,6 @@ set cursorline " show cursor line
 set encoding=UTF-8
 
 call plug#begin()
-  Plug 'inkarkat/vim-LineJuggler'
   Plug 'doums/darcula'
   Plug 'editorconfig/editorconfig-vim' "EditorConfigReload to reload configs
   Plug 'preservim/nerdtree'
@@ -95,9 +94,6 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-nnoremap <m-x> <c-w>v
-
-
 " status lines
 " Clear status line when vimrc is reloaded.
 set statusline=
@@ -114,8 +110,7 @@ set statusline+=\ row:\ %l\ col:\ %c\ percent:\ %p%%
 " Show the status on the second to last line.
 set laststatus=2
 
-" nnoremap <F3> :NERDTreeToggle<cr>
-nnoremap <C-o> :NERDTreeToggle %<CR>
+nnoremap <C-o> :NERDTreeToggle %<CR> " navigate to current buffer's file location on NERDTree
 
 let g:ctrlp_map = '<space><space>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -133,6 +128,6 @@ function! GitStatus()
 endfunction
 set statusline+=%{GitStatus()}
 
-
+" moving lines up/down
 nnoremap <S-k> :m -2<CR>
 nnoremap <S-j> :m +1<CR>
