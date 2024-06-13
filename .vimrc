@@ -130,7 +130,32 @@ set statusline+=%{GitStatus()}
 
 " moving lines up/down
 nnoremap <S-k> :m -2<CR>
+nnoremap <S-up> :m -2<CR>
 nnoremap <S-j> :m +1<CR>
+nnoremap <S-down> :m +1<CR>
 
- nnoremap - dd
- nnoremap <C-d> yyp<esc> " duplicate the current line
+nnoremap - dd
+nnoremap <C-d> yyp<esc> " duplicate the current line
+nnoremap <f5> :so $MYVIMRC<cr> "reload .vimrc
+
+nnoremap <F2> :call ToggleDone()<CR>
+nnoremap <F3> :call ToggleThumbsUp()<CR>
+
+fun! ToggleDone()
+    let currentLine = getline('.')
+    if  stridx(currentLine, '✅') >= 0
+        call setline('.', substitute(getline('.'), '✅', '', ''))
+    else
+       call setline('.',  getline('.'). '✅')
+    endif
+endfun
+
+
+fun! ToggleThumbsUp()
+    let currentLine = getline('.')
+    if  stridx(currentLine, '👍') >= 0
+        call setline('.', substitute(getline('.'), '👍', '', ''))
+    else
+       call setline('.',  getline('.'). '👍')
+    endif
+endfun
