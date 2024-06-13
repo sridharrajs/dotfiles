@@ -131,3 +131,6 @@ set statusline+=%{GitStatus()}
 " moving lines up/down
 nnoremap <S-k> :m -2<CR>
 nnoremap <S-j> :m +1<CR>
+
+ nnoremap - dd
+ nnoremap <C-d> yyp<esc> " duplicate the current line
